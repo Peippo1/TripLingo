@@ -12,7 +12,10 @@ import SwiftData
 struct TripLingoApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Trip.self,
+            Situation.self,
+            Phrase.self,
+            SavedPhrase.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

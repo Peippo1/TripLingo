@@ -1,0 +1,16 @@
+{
+  "destination": "Barcelona",
+  "languages": ["Spanish", "Catalan"],
+  "situations": [
+    {
+      "title": "Café",
+      "phrases": [
+        {
+          "targetText": "Un café con leche, por favor.",
+          "englishMeaning": "A coffee with milk, please.",
+          "notes": "Polite and common in cafes."
+        }
+      ]
+    }
+  ]
+}
