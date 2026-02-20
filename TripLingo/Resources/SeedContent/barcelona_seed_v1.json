@@ -8,7 +8,8 @@
         {
           "targetText": "Un café con leche, por favor.",
           "englishMeaning": "A coffee with milk, please.",
-          "notes": "Polite and common in cafes."
+          "notes": "Polite and common in cafes.",
+          "tags": ["food", "polite"]
         }
       ]
     }

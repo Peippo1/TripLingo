@@ -1,19 +1,32 @@
 import SwiftUI
+import SwiftData
 
 struct PhrasebookHomeView: View {
-    var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Saved travel phrases and quick access favorites will appear here.")
-                    .foregroundStyle(.secondary)
-                Spacer()
-            }
-            .padding()
-            .navigationTitle("Phrasebook")
-        }
-    }
-}
+    @Query(sort: [SortDescriptor(\SavedPhrase.createdAt, order: .reverse)])
+    private var savedPhrases: [SavedPhrase]
 
-#Preview {
-    PhrasebookHomeView()
+    var body: some View {
+        Group {
+            if savedPhrases.isEmpty {
+                ContentUnavailableView(
+                    "No Saved Phrases",
+                    systemImage: "text.book.closed",
+                    description: Text("Save a phrase from Lessons to see it here.")
+                )
+            } else {
+                List(savedPhrases) { savedPhrase in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(savedPhrase.targetText)
+                            .font(.headline)
+                        Text(savedPhrase.englishMeaning)
+                            .foregroundStyle(.secondary)
+                        Text("\(savedPhrase.destinationName) • \(savedPhrase.situationTitle)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+        }
+        .navigationTitle("Phrasebook")
+    }
 }
