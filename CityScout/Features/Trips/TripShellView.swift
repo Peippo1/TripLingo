@@ -72,6 +72,22 @@ struct TripShellView: View {
             }
 
             NavigationStack {
+                SearchHomeView(destinationName: destinationName)
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            Button("Change City") {
+                                selectedDestinationName = ""
+                            }
+                            .accessibilityLabel("Change city")
+                            .accessibilityHint("Returns to destination selection.")
+                        }
+                    }
+            }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
+
+            NavigationStack {
                 MapHomeView(destinationName: destinationName)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
