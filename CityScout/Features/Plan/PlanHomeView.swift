@@ -39,20 +39,6 @@ private enum PlanPreference: String, CaseIterable, Identifiable {
         }
     }
 
-    var activityPhrase: String {
-        switch self {
-        case .relaxed:
-            return "a slower-paced neighborhood wander"
-        case .foodFocused:
-            return "a food stop with local specialties"
-        case .sightseeing:
-            return "one of the city's headline sights"
-        case .cafes:
-            return "a cafe break"
-        case .nightOut:
-            return "an evening spot with lively energy"
-        }
-    }
 }
 
 private struct PlanSection: Identifiable {
@@ -71,7 +57,11 @@ struct PlanHomeView: View {
 
     @State private var prompt = ""
     @State private var selectedPreferences: Set<PlanPreference> = []
-    @State private var itinerary: [PlanSection] = []
+    @State private var itinerary: PlanAPIService.ItineraryResponse?
+    @State private var isLoading = false
+    @State private var errorMessage: String?
+
+    private let planAPIService = PlanAPIService()
 
     private var trimmedPrompt: String {
         prompt.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -79,6 +69,15 @@ struct PlanHomeView: View {
 
     private var canGenerate: Bool {
         trimmedPrompt.isEmpty == false || selectedPreferences.isEmpty == false
+    }
+
+    private var itinerarySections: [PlanSection] {
+        guard let itinerary else { return [] }
+        return [
+            PlanSection(title: itinerary.morning.title, activities: itinerary.morning.activities),
+            PlanSection(title: itinerary.afternoon.title, activities: itinerary.afternoon.activities),
+            PlanSection(title: itinerary.evening.title, activities: itinerary.evening.activities),
+        ]
     }
 
     var body: some View {
@@ -93,7 +92,11 @@ struct PlanHomeView: View {
                 preferencesSection
                 actionSection
 
-                if itinerary.isEmpty == false {
+                if let errorMessage {
+                    errorCard(message: errorMessage)
+                }
+
+                if itinerarySections.isEmpty == false {
                     itinerarySection
                 }
             }
@@ -198,17 +201,26 @@ struct PlanHomeView: View {
 
     private var actionSection: some View {
         Button {
-            itinerary = makeItinerary()
+            Task {
+                await generateItinerary()
+            }
         } label: {
-            Text("Generate Itinerary")
-                .fontWeight(.semibold)
-                .frame(maxWidth: .infinity)
+            HStack {
+                if isLoading {
+                    ProgressView()
+                        .accessibilityHidden(true)
+                }
+
+                Text(isLoading ? "Generating..." : "Generate Itinerary")
+                    .fontWeight(.semibold)
+            }
+            .frame(maxWidth: .infinity)
         }
         .buttonStyle(.borderedProminent)
-        .disabled(canGenerate == false)
+        .disabled(canGenerate == false || isLoading)
         .padding(.horizontal)
         .accessibilityLabel("Generate itinerary")
-        .accessibilityHint("Creates a simple day plan using your prompt and selected preferences.")
+        .accessibilityHint("Generates a day plan using your prompt and selected preferences.")
     }
 
     private var itinerarySection: some View {
@@ -218,7 +230,7 @@ struct PlanHomeView: View {
                 .padding(.horizontal)
 
             VStack(spacing: 12) {
-                ForEach(itinerary) { section in
+                ForEach(itinerarySections) { section in
                     VStack(alignment: .leading, spacing: 10) {
                         Text(section.title)
                             .font(.headline)
@@ -245,50 +257,68 @@ struct PlanHomeView: View {
                             .fill(Color(.secondarySystemBackground))
                     )
                     .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(section.title). \(section.activities.joined(separator: ". "))")
                 }
             }
             .padding(.horizontal)
+
+            if let notes = itinerary?.notes, notes.isEmpty == false {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Notes")
+                        .font(.headline)
+
+                    ForEach(notes, id: \.self) { note in
+                        Text(note)
+                            .font(.footnote)
+                            .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .padding(18)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(Color(.secondarySystemBackground))
+                )
+                .padding(.horizontal)
+                .accessibilityElement(children: .combine)
+            }
         }
     }
 
-    private func makeItinerary() -> [PlanSection] {
-        let selected = PlanPreference.allCases.filter { selectedPreferences.contains($0) }
-        let firstPreference = selected.first?.activityPhrase ?? "a comfortable local start"
-        let secondPreference = selected.dropFirst().first?.activityPhrase ?? "a local neighborhood to explore"
-        let eveningPreference = selected.contains(.nightOut)
-            ? PlanPreference.nightOut.activityPhrase
-            : (selected.contains(.foodFocused) ? "dinner in \(destinationName)" : "a relaxed walk in \(destinationName)")
+    private func errorCard(message: String) -> some View {
+        Text(message)
+            .font(.footnote)
+            .foregroundStyle(.red)
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(Color(.secondarySystemBackground))
+            )
+            .padding(.horizontal)
+            .accessibilityLabel("Planner error. \(message)")
+    }
 
-        let promptActivity: String
-        if trimmedPrompt.isEmpty {
-            promptActivity = "Set your pace with \(firstPreference) in \(destinationName)."
-        } else {
-            promptActivity = "Start with a plan inspired by “\(trimmedPrompt)”."
+    @MainActor
+    private func generateItinerary() async {
+        isLoading = true
+        errorMessage = nil
+
+        do {
+            itinerary = try await planAPIService.generateItinerary(
+                destination: destinationName,
+                prompt: trimmedPrompt,
+                preferences: selectedPreferences
+                    .sorted { $0.title < $1.title }
+                    .map(\.title),
+                savedPlaces: []
+            )
+        } catch {
+            errorMessage = error.localizedDescription
         }
 
-        return [
-            PlanSection(
-                title: "Morning",
-                activities: [
-                    promptActivity,
-                    "Begin with \(selected.contains(.cafes) ? "coffee in \(destinationName)" : secondPreference)."
-                ]
-            ),
-            PlanSection(
-                title: "Afternoon",
-                activities: [
-                    "Spend the afternoon around \(selected.contains(.sightseeing) ? "one of the main sights in \(destinationName)" : "a local area worth exploring").",
-                    "Pause for \(selected.contains(.foodFocused) ? "a meal that highlights local flavors" : "lunch and a short recharge")."
-                ]
-            ),
-            PlanSection(
-                title: "Evening",
-                activities: [
-                    "Wrap up with \(eveningPreference).",
-                    "Leave time for a flexible stop that matches your mood in \(destinationName)."
-                ]
-            )
-        ]
+        isLoading = false
     }
 }
 
