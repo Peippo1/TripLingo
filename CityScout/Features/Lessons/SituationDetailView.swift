@@ -36,12 +36,15 @@ struct SituationDetailView: View {
                         VStack(alignment: .leading, spacing: 6) {
                             Text(phrase.targetText)
                                 .font(.headline)
+                                .fixedSize(horizontal: false, vertical: true)
                             Text(phrase.englishMeaning)
                                 .foregroundStyle(.secondary)
+                                .fixedSize(horizontal: false, vertical: true)
                             if let notes = phrase.notes, notes.isEmpty == false {
                                 Text(notes)
                                     .font(.footnote)
                                     .foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                             HStack(spacing: 8) {
                                 ForEach(tags(from: phrase.tagsCSV), id: \.self) { tag in
@@ -63,9 +66,12 @@ struct SituationDetailView: View {
                                 }
                                 .buttonStyle(.bordered)
                                 .disabled(isPhraseSaved(phrase))
+                                .accessibilityLabel(isPhraseSaved(phrase) ? "Phrase saved" : "Save phrase")
+                                .accessibilityHint(isPhraseSaved(phrase) ? "This phrase is already in your phrasebook." : "Adds this phrase to your phrasebook.")
                             }
                         }
                         .padding(.vertical, 6)
+                        .accessibilityElement(children: .contain)
                     }
                 } header: {
                     VStack(alignment: .leading, spacing: 2) {

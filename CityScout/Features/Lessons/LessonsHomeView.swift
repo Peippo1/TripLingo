@@ -19,16 +19,25 @@ struct LessonsHomeView: View {
         Group {
             if let trip = selectedTrip {
                 TripLessonsView(trip: trip)
-                    .navigationTitle("Lessons")
             } else {
-                ContentUnavailableView(
-                    "No Lessons Found",
-                    systemImage: "book",
-                    description: Text("No trip content is available for \(destinationName) yet.")
-                )
-                .navigationTitle("Lessons")
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        CityHeaderView(destinationName: destinationName)
+                            .padding(.horizontal)
+                            .padding(.top, 8)
+
+                        ContentUnavailableView(
+                            "No Lessons Found",
+                            systemImage: "book",
+                            description: Text("No trip content is available for \(destinationName) yet.")
+                        )
+                        .accessibilityLabel("No lessons found for \(destinationName)")
+                        .accessibilityHint("Choose another city or check back later for lesson content.")
+                    }
+                }
             }
         }
+        .navigationTitle("\(destinationName) Lessons")
     }
 }
 

@@ -8,16 +8,41 @@ struct SavedPhraseDetailView: View {
     let savedPhrase: SavedPhrase
 
     @State private var showDeleteConfirmation = false
+    @StateObject private var pronunciationService = PronunciationService()
 
     var body: some View {
         List {
             Section("Target") {
                 Text(savedPhrase.targetText)
                     .font(.title3)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Saved phrase: \(savedPhrase.targetText)")
+            }
+
+            Section("Audio") {
+                Button {
+                    pronunciationService.play(
+                        text: savedPhrase.targetText,
+                        destinationName: savedPhrase.destinationName
+                    )
+                } label: {
+                    Label("Play pronunciation", systemImage: "speaker.wave.2.fill")
+                }
+                .accessibilityLabel("Play pronunciation")
+                .accessibilityHint("Speaks the saved phrase aloud.")
+
+                if pronunciationService.isSpeaking {
+                    Button("Stop playback") {
+                        pronunciationService.stop()
+                    }
+                    .accessibilityLabel("Stop pronunciation")
+                    .accessibilityHint("Stops audio playback.")
+                }
             }
 
             Section("Meaning") {
                 Text(savedPhrase.englishMeaning)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             Section("Context") {
@@ -35,6 +60,8 @@ struct SavedPhraseDetailView: View {
                 } label: {
                     Text("Delete Phrase")
                 }
+                .accessibilityLabel("Delete saved phrase")
+                .accessibilityHint("Removes this phrase from your phrasebook.")
             }
         }
         .navigationTitle("Saved Phrase")
@@ -47,6 +74,9 @@ struct SavedPhraseDetailView: View {
                 deleteSavedPhrase()
             }
             Button("Cancel", role: .cancel) {}
+        }
+        .onDisappear {
+            pronunciationService.stop()
         }
     }
 

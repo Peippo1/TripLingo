@@ -4,7 +4,7 @@ import Translation
 #endif
 
 struct TranslateHomeView: View {
-    @AppStorage("selectedDestinationName") private var destinationName = ""
+    let destinationName: String
 
     @State private var inputText = ""
     @State private var submittedText = ""
@@ -33,34 +33,41 @@ struct TranslateHomeView: View {
             unavailableView
 #endif
         }
-        .navigationTitle("Translate")
+        .navigationTitle("\(destinationName) Translate")
     }
 
     private var supportedContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                headerCard
+                CityHeaderView(destinationName: destinationName)
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+
+                introCard
                 inputSection
                 languageSection
                 actionSection
                 outputSection
             }
-            .padding()
+            .padding(.bottom)
         }
     }
 
-    private var headerCard: some View {
+    private var introCard: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(destinationName.isEmpty ? "Quick travel translations" : "Quick phrases for \(destinationName)")
-                .font(.title3.weight(.semibold))
-
             Text("Translate short phrases for taxis, cafes, stations, and check-ins.")
+                .font(.title3.weight(.semibold))
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text("Use short, practical wording when you need something quickly in the city.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
 
             Text("Short phrases work best, such as “Two tickets, please” or “Where is the train station?”")
                 .font(.footnote)
                 .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)
@@ -68,6 +75,7 @@ struct TranslateHomeView: View {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .fill(Color(.secondarySystemBackground))
         )
+        .padding(.horizontal)
         .accessibilityElement(children: .combine)
     }
 
@@ -75,6 +83,7 @@ struct TranslateHomeView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Phrase to Translate")
                 .font(.headline)
+                .padding(.horizontal)
 
             ZStack(alignment: .topLeading) {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -95,6 +104,7 @@ struct TranslateHomeView: View {
                     .accessibilityLabel("Source text")
                     .accessibilityHint("Enter the phrase you want translated.")
             }
+            .padding(.horizontal)
         }
     }
 
@@ -102,6 +112,7 @@ struct TranslateHomeView: View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Languages")
                 .font(.headline)
+                .padding(.horizontal)
 
             VStack(alignment: .leading, spacing: 14) {
                 Picker("From", selection: $selectedSourceLanguage) {
@@ -119,6 +130,7 @@ struct TranslateHomeView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(.bordered)
+                .accessibilityLabel("Swap source and target languages")
                 .accessibilityHint("Swaps the source and target languages and flips translated text into the input when available.")
 
                 Picker("To", selection: $selectedTargetLanguage) {
@@ -134,6 +146,7 @@ struct TranslateHomeView: View {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(Color(.secondarySystemBackground))
             )
+            .padding(.horizontal)
         }
     }
 
@@ -164,6 +177,7 @@ struct TranslateHomeView: View {
             .buttonStyle(.bordered)
             .accessibilityHint("Clears the source text, translated text, and any status message.")
         }
+        .padding(.horizontal)
     }
 
     private var outputSection: some View {
@@ -188,14 +202,17 @@ struct TranslateHomeView: View {
                             .accessibilityHidden(true)
                         Text("Working on your translation...")
                             .foregroundStyle(.secondary)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                 } else if translatedText.isEmpty {
                     Text("Your translated phrase will appear here.")
                         .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 } else {
                     Text(translatedText)
                         .textSelection(.enabled)
                         .accessibilityLabel("Translated text")
+                        .fixedSize(horizontal: false, vertical: true)
                 }
 
                 if let errorMessage {
@@ -203,14 +220,17 @@ struct TranslateHomeView: View {
                         .font(.footnote)
                         .foregroundStyle(.red)
                         .accessibilityLabel("Translation status")
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .frame(maxWidth: .infinity, minHeight: 120, alignment: .topLeading)
+            .frame(maxWidth: .infinity, alignment: .topLeading)
             .padding(16)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(Color(.secondarySystemBackground))
             )
+            .padding(.horizontal)
+            .accessibilityElement(children: .contain)
         }
     }
 
@@ -219,12 +239,21 @@ struct TranslateHomeView: View {
     }
 
     private var unavailableView: some View {
-        ContentUnavailableView(
-            "Translation Unavailable",
-            systemImage: "globe",
-            description: Text("Translation requires a supported iOS version.")
-        )
-        .padding()
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                CityHeaderView(destinationName: destinationName)
+                    .padding(.horizontal)
+                    .padding(.top, 8)
+
+                ContentUnavailableView(
+                    "Translation Unavailable",
+                    systemImage: "globe",
+                    description: Text("Translation requires a supported iOS version.")
+                )
+                .accessibilityLabel("Translation unavailable")
+                .accessibilityHint("This device does not support the translation feature.")
+            }
+        }
     }
 
     private func swapLanguages() {
@@ -401,6 +430,6 @@ private enum TranslateAppLanguage: String, CaseIterable, Identifiable {
 
 #Preview {
     NavigationStack {
-        TranslateHomeView()
+        TranslateHomeView(destinationName: "Paris")
     }
 }

@@ -10,21 +10,48 @@ struct PhraseDetailView: View {
     let situationTitle: String
 
     @State private var isSaved = false
+    @StateObject private var pronunciationService = PronunciationService()
 
     var body: some View {
         List {
             Section("Target") {
                 Text(phrase.targetText)
                     .font(.title3)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityLabel("Phrase: \(phrase.targetText)")
+            }
+
+            Section("Audio") {
+                Button {
+                    pronunciationService.play(
+                        text: phrase.targetText,
+                        languageName: phrase.situation.trip.targetLanguage,
+                        destinationName: destinationName
+                    )
+                } label: {
+                    Label("Play pronunciation", systemImage: "speaker.wave.2.fill")
+                }
+                .accessibilityLabel("Play pronunciation")
+                .accessibilityHint("Speaks the phrase aloud.")
+
+                if pronunciationService.isSpeaking {
+                    Button("Stop playback") {
+                        pronunciationService.stop()
+                    }
+                    .accessibilityLabel("Stop pronunciation")
+                    .accessibilityHint("Stops audio playback.")
+                }
             }
 
             Section("Meaning") {
                 Text(phrase.englishMeaning)
+                    .fixedSize(horizontal: false, vertical: true)
             }
 
             if let notes = phrase.notes, !notes.isEmpty {
                 Section("Notes") {
                     Text(notes)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
 
@@ -34,6 +61,8 @@ struct PhraseDetailView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(isSaved)
+                .accessibilityLabel(isSaved ? "Saved to phrasebook" : "Save to phrasebook")
+                .accessibilityHint(isSaved ? "This phrase is already saved." : "Adds this phrase to your phrasebook for quick access later.")
             }
         }
         .navigationTitle("Phrase")
@@ -45,6 +74,9 @@ struct PhraseDetailView: View {
                 situationTitle: situationTitle,
                 targetText: phrase.targetText
             )
+        }
+        .onDisappear {
+            pronunciationService.stop()
         }
     }
 
