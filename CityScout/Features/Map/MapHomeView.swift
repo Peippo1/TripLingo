@@ -2,6 +2,11 @@ import SwiftUI
 import SwiftData
 import MapKit
 
+private struct SavedPlaceCategoryStyle {
+    let icon: String
+    let tint: Color
+}
+
 struct MapHomeView: View {
     let destinationName: String
 
@@ -126,18 +131,32 @@ struct MapHomeView: View {
     }
 
     private func savedPlaceAnnotation(for place: SavedPlace) -> some View {
+        let style = categoryStyle(for: place.category)
+        let isSelected = place.id == selectedPlaceID
+
         Button {
             selectedPlaceID = place.id
         } label: {
-            Image(systemName: place.id == selectedPlaceID ? "mappin.circle.fill" : "mappin.circle")
-                .font(place.id == selectedPlaceID ? .title : .title2)
-                .foregroundStyle(place.id == selectedPlaceID ? Color.accentColor : Color.red)
-                .shadow(color: .black.opacity(0.16), radius: 6, y: 3)
-                .padding(6)
-                .background(.thinMaterial, in: Circle())
+            ZStack {
+                Circle()
+                    .fill(style.tint)
+                    .frame(width: isSelected ? 34 : 30, height: isSelected ? 34 : 30)
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white.opacity(0.9), lineWidth: 2)
+                    )
+
+                Image(systemName: style.icon)
+                    .font(isSelected ? .headline : .subheadline.weight(.semibold))
+                    .foregroundStyle(.white)
+            }
+            .scaleEffect(isSelected ? 1.12 : 1.0)
+            .shadow(color: .black.opacity(0.16), radius: 6, y: 3)
+            .padding(6)
+            .background(.thinMaterial, in: Circle())
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(place.name), saved place")
+        .accessibilityLabel(annotationAccessibilityLabel(for: place))
         .accessibilityHint("Shows place details.")
     }
 
@@ -233,6 +252,28 @@ struct MapHomeView: View {
 
     private func formattedDate(for date: Date) -> String {
         date.formatted(date: .abbreviated, time: .shortened)
+    }
+
+    private func annotationAccessibilityLabel(for place: SavedPlace) -> String {
+        let categoryName = place.category?.displayName.lowercased() ?? "other"
+        return "\(place.name), \(categoryName), \(place.destinationName)"
+    }
+
+    private func categoryStyle(for category: POICategory?) -> SavedPlaceCategoryStyle {
+        switch category {
+        case .food:
+            return SavedPlaceCategoryStyle(icon: "fork.knife", tint: .orange)
+        case .cafes:
+            return SavedPlaceCategoryStyle(icon: "cup.and.saucer.fill", tint: .brown)
+        case .sights:
+            return SavedPlaceCategoryStyle(icon: "camera.fill", tint: .blue)
+        case .shopping:
+            return SavedPlaceCategoryStyle(icon: "bag.fill", tint: .pink)
+        case .nightlife:
+            return SavedPlaceCategoryStyle(icon: "moon.stars.fill", tint: .purple)
+        case nil:
+            return SavedPlaceCategoryStyle(icon: "mappin.circle.fill", tint: .red)
+        }
     }
 
     private func longPressGesture(with proxy: MapProxy) -> some Gesture {

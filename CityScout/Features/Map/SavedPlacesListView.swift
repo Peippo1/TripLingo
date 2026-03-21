@@ -38,14 +38,22 @@ struct SavedPlacesListView: View {
                                 Button {
                                     onSelectPlace(place)
                                 } label: {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text(place.name)
-                                            .font(.headline)
-                                            .multilineTextAlignment(.leading)
+                                    HStack(alignment: .top, spacing: 12) {
+                                        Image(systemName: categoryIcon(for: place.category))
+                                            .font(.subheadline)
+                                            .foregroundStyle(categoryTint(for: place.category))
+                                            .frame(width: 18)
+                                            .accessibilityHidden(true)
 
-                                        Text(place.createdAt, format: Date.FormatStyle(date: .abbreviated, time: .shortened))
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
+                                        VStack(alignment: .leading, spacing: 4) {
+                                            Text(place.name)
+                                                .font(.headline)
+                                                .multilineTextAlignment(.leading)
+
+                                            Text(place.createdAt, format: Date.FormatStyle(date: .abbreviated, time: .shortened))
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                        }
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 }
@@ -73,6 +81,27 @@ struct SavedPlacesListView: View {
     private func sortedPlaces(in category: POICategory?) -> [SavedPlace] {
         (groupedPlaces[category] ?? [])
             .sorted { $0.createdAt > $1.createdAt }
+    }
+
+    private func categoryIcon(for category: POICategory?) -> String {
+        category?.icon ?? "mappin.circle.fill"
+    }
+
+    private func categoryTint(for category: POICategory?) -> Color {
+        switch category {
+        case .food:
+            return .orange
+        case .cafes:
+            return .brown
+        case .sights:
+            return .blue
+        case .shopping:
+            return .pink
+        case .nightlife:
+            return .purple
+        case nil:
+            return .red
+        }
     }
 }
 
