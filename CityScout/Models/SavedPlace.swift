@@ -5,11 +5,21 @@ import SwiftData
 final class SavedPlace {
     var id: UUID
     var name: String
-    var category: POICategory?
+    var categoryRaw: String?
     var destinationName: String
     var latitude: Double
     var longitude: Double
     var createdAt: Date
+
+    var category: POICategory? {
+        get {
+            guard let categoryRaw else { return nil }
+            return POICategory(rawValue: categoryRaw)
+        }
+        set {
+            categoryRaw = newValue?.rawValue
+        }
+    }
 
     init(
         id: UUID = UUID(),
@@ -22,7 +32,7 @@ final class SavedPlace {
     ) {
         self.id = id
         self.name = name
-        self.category = category
+        self.categoryRaw = category?.rawValue
         self.destinationName = destinationName
         self.latitude = latitude
         self.longitude = longitude
