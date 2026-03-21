@@ -42,13 +42,16 @@ struct DestinationPickerView: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(trip.destinationName)
                                 .font(.headline)
+                                .fixedSize(horizontal: false, vertical: true)
                             Text(trip.targetLanguage)
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
-                    .accessibilityLabel("Choose \(trip.destinationName)")
-                    .accessibilityHint("Opens features for this destination.")
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("\(trip.destinationName), language \(trip.targetLanguage)")
+                    .accessibilityHint("Opens CityScout for this destination.")
                 }
             }
         }

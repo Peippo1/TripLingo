@@ -1,43 +1,103 @@
 # CityScout Roadmap
 
-## V1 – Offline City Phrase Companion
+## V1 – City-First Travel Companion (Current Phase)
 
-### Must-Have
-- Offline phrase browsing for launch cities without network dependency.
-- Stable lesson/phrase navigation with predictable back stack behavior.
-- Local persistence for required content and user progress markers.
-- Seed bootstrap/import flow for initial city content.
-- Core CI pipeline that builds and tests `CityScout` on every `dev` push/PR.
+### Core Features (Complete / In Progress)
+- City-first navigation flow (Onboarding → Destination → Scoped Experience).
+- Seeded lesson content across multiple cities (Barcelona, Paris, Athens, Rome, Helsinki, Copenhagen, Lisbon).
+- Phrasebook with save, recent tracking, and search.
+- Explore (Points of Interest) with ability to save to Map.
+- Map with destination-scoped saved places.
+- Apple Translate integration for quick phrase translation.
+- Reusable City Header with destination context and local city time.
+- Robust SwiftData seed bootstrap with idempotent import and failure-safe UI states.
+- CI pipeline building and testing on `dev` branch.
 
-### Quality Polish
-- Improve loading states and empty-state messaging.
-- Remove debug-only logging/noise before release builds.
-- Ensure consistent copy, typography, and spacing across primary screens.
-- Validate accessibility basics (dynamic type, contrast, VoiceOver labels where applicable).
+### Quality & Polish (Next Priority)
+- Improve loading and empty states across all features.
+- Accessibility pass (Dynamic Type, VoiceOver labels, contrast checks).
+- Add placeholder app icon and basic branding.
+- Minor UI polish (spacing, transitions, consistency across tabs).
+- Ensure consistent tone and copy across all screens.
 
-### Content Scope
-- Barcelona seed content.
-- Paris seed content.
-- Phrase and lesson metadata required for offline learning flow.
+### Release Readiness Checklist
+- All core flows manually verified on simulator.
+- No critical crashes or blocking navigation issues.
+- Seed import verified stable across fresh installs.
+- CI pipeline consistently green.
+- Internal test build ready for sharing.
 
-### Release Checklist
-- V1 must-have features complete and manually verified on simulator.
-- No critical navigation regressions in core flows.
-- Seed imports verified idempotent and version-gated.
-- CI build and test jobs green on `dev`.
-- App metadata and release notes prepared for internal distribution.
+---
 
-## V1.1 – Usability Upgrades
-- Improve discoverability of key offline features.
-- Refine onboarding and first-run guidance.
-- Add small UX enhancements driven by early tester feedback.
+## V1.1 – Usability & Experience Upgrades
 
-## V2 – AI-Assisted (Feature-Flagged)
-- Introduce AI-assisted features behind runtime feature flags.
-- Preserve offline-first baseline when AI/network features are unavailable.
-- Add telemetry and guardrails before broader rollout.
+### UX Improvements
+- Tap map annotations → show place detail card.
+- Improved saved places list and management UI.
+- Refined onboarding flow (clearer value + smoother transitions).
+- Better destination switching UX.
+- Explore categories and filtering (Food, Sights, Cafes, etc.) with lightweight UI tagging
 
-## V3 – Travel Planning
-- Expand from phrase companion to lightweight itinerary/trip planning.
-- Cross-feature planning workflows (places, notes, scheduling).
-- Content and architecture scaling for multi-city, longer-trip scenarios.
+### Learning Enhancements
+- Add audio pronunciation (basic TTS).
+- Improve lesson progression and feedback.
+
+### General Improvements
+- Performance optimisation (reduce unnecessary view updates).
+- Improve perceived responsiveness across navigation.
+
+---
+
+## V2 – AI-Assisted Travel Layer
+
+### Core AI Features
+- AI-enhanced translation (context-aware, tone-aware).
+- “Explain this phrase” functionality.
+- Smart phrase suggestions based on situation.
+- Chat-based travel assistant (text-first).
+- Interactive AI trip planning assistant (e.g. "What are good restaurants in Rome?", "What events are on?", "What should I see?")
+- Context-aware recommendations based on destination, saved places, and user preferences
+- Conversational discovery (e.g. "Find me a coffee near my hotel")
+
+### Architecture
+- Feature-flag AI components.
+- Preserve offline-first baseline when AI unavailable.
+- Introduce API layer (OpenAI) with clear boundaries.
+
+### Safety & Control
+- Usage limits / cost control.
+- Error handling and graceful fallbacks.
+
+### Voice & Interaction Layer
+- Speech-to-text for conversational interaction with AI assistant
+- Text-to-speech responses for hands-free usage
+- Pronunciation practice mode for language learning
+- Dual-purpose voice system (learning + in-trip discovery)
+
+---
+
+## V3 – Full Travel Companion
+
+### Product Expansion
+- Voice mode (speech → translate → playback).
+- Offline downloadable city packs.
+- Weather integration.
+- Lightweight trip planning (notes, saved places, scheduling).
+
+### Platform Growth
+- App Store release.
+- Multi-language UI support.
+- Scaling architecture for many destinations.
+
+---
+
+## Long-Term Vision
+
+CityScout evolves from a simple phrase-learning tool into a fully integrated, intelligent travel companion that:
+- Works offline by default
+- Enhances real-world travel experiences
+- Scales across cities, languages, and user journeys
+
+The core principle remains:
+
+> A fast, reliable, and intuitive city-first experience — with AI as an enhancement, not a dependency.

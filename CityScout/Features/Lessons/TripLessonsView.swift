@@ -25,6 +25,13 @@ struct TripLessonsView: View {
 
     var body: some View {
         List {
+            CityHeaderView(destinationName: trip.destinationName)
+                .padding(.horizontal)
+                .padding(.top, 8)
+                .padding(.bottom, 12)
+                .listRowInsets(EdgeInsets())
+                .listRowSeparator(.hidden)
+
             if situations.isEmpty {
                 ContentUnavailableView(
                     "No Situations",
@@ -46,7 +53,8 @@ struct TripLessonsView: View {
                 }
             }
         }
-        .navigationTitle(trip.destinationName)
+        .listStyle(.plain)
+        .navigationTitle("\(trip.destinationName) Lessons")
         .task {
             guard didCompleteInitialLoad == false else { return }
             didCompleteInitialLoad = true

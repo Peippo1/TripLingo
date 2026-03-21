@@ -40,7 +40,7 @@ struct TripShellView: View {
             }
 
             NavigationStack {
-                TranslateHomeView()
+                TranslateHomeView(destinationName: destinationName)
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
                             Button("Change City") {

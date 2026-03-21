@@ -18,4 +18,9 @@ enum SavedPlaceService {
         modelContext.insert(place)
         try modelContext.save()
     }
+
+    static func deletePlace(_ place: SavedPlace, in modelContext: ModelContext) throws {
+        modelContext.delete(place)
+        try modelContext.save()
+    }
 }

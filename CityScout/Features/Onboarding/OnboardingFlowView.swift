@@ -33,6 +33,8 @@ struct OnboardingFlowView: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .animation(.easeInOut(duration: 0.4), value: currentPage)
+            .accessibilityLabel("Onboarding pages")
+            .accessibilityHint("Swipe left or right to review CityScout features.")
 
             if currentPage == 2 {
                 Button("Get Started") {
@@ -63,7 +65,7 @@ private struct OnboardingPageView: View {
     var body: some View {
         VStack(spacing: 20) {
             Image(systemName: symbolName)
-                .font(.system(size: 72))
+                .font(.system(size: 72, weight: .regular, design: .default))
                 .foregroundStyle(Color.accentColor)
                 .scaleEffect(animateIcon ? 1.0 : 0.88)
                 .opacity(animateIcon ? 1.0 : 0.7)
@@ -73,12 +75,14 @@ private struct OnboardingPageView: View {
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
 
             Text(message)
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 12)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear {
@@ -87,6 +91,7 @@ private struct OnboardingPageView: View {
             }
         }
         .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(title). \(message)")
     }
 }
 

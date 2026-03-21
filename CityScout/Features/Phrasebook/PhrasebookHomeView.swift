@@ -40,15 +40,42 @@ struct PhrasebookHomeView: View {
     var body: some View {
         Group {
             if destinationSavedPhrases.isEmpty {
-                ContentUnavailableView(
-                    "No Saved Phrases",
-                    systemImage: "text.book.closed",
-                    description: Text("Save a phrase from Lessons in \(destinationName) to see it here.")
-                )
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        CityHeaderView(destinationName: destinationName)
+                            .padding(.horizontal)
+                            .padding(.top, 8)
+
+                        ContentUnavailableView(
+                            "No Saved Phrases",
+                            systemImage: "text.book.closed",
+                            description: Text("Save a phrase from Lessons in \(destinationName) to see it here.")
+                        )
+                        .accessibilityLabel("No saved phrases for \(destinationName)")
+                        .accessibilityHint("Save a phrase from Lessons to find it here later.")
+                    }
+                }
             } else if filteredSavedPhrases.isEmpty {
-                ContentUnavailableView.search(text: searchText)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 24) {
+                        CityHeaderView(destinationName: destinationName)
+                            .padding(.horizontal)
+                            .padding(.top, 8)
+
+                        ContentUnavailableView.search(text: searchText)
+                            .accessibilityLabel("No saved phrases match \(searchText)")
+                            .accessibilityHint("Try a different search term.")
+                    }
+                }
             } else {
                 List {
+                    CityHeaderView(destinationName: destinationName)
+                        .padding(.horizontal)
+                        .padding(.top, 8)
+                        .padding(.bottom, 12)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+
                     if !filteredRecentPracticed.isEmpty {
                         Section("Recently Practiced") {
                             ForEach(filteredRecentPracticed.prefix(5)) { savedPhrase in
@@ -58,13 +85,18 @@ struct PhrasebookHomeView: View {
                                     VStack(alignment: .leading, spacing: 4) {
                                         Text(savedPhrase.targetText)
                                             .font(.headline)
+                                            .fixedSize(horizontal: false, vertical: true)
                                         Text(savedPhrase.englishMeaning)
                                             .foregroundStyle(.secondary)
+                                            .fixedSize(horizontal: false, vertical: true)
                                         Text("\(savedPhrase.destinationName) • \(savedPhrase.situationTitle)")
                                             .font(.caption)
                                             .foregroundStyle(.secondary)
+                                            .fixedSize(horizontal: false, vertical: true)
                                     }
                                 }
+                                .accessibilityElement(children: .combine)
+                                .accessibilityHint("Opens the saved phrase details.")
                             }
                         }
                     }
@@ -76,24 +108,32 @@ struct PhrasebookHomeView: View {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(savedPhrase.targetText)
                                     .font(.headline)
+                                    .fixedSize(horizontal: false, vertical: true)
                                 Text(savedPhrase.englishMeaning)
                                     .foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
                                 Text("\(savedPhrase.destinationName) • \(savedPhrase.situationTitle)")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
+                                    .fixedSize(horizontal: false, vertical: true)
                             }
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityHint("Opens the saved phrase details.")
                     }
                     .onDelete(perform: deleteSavedPhrases)
                 }
+                .listStyle(.plain)
             }
         }
-        .navigationTitle("Phrasebook")
+        .navigationTitle("\(destinationName) Phrasebook")
         .searchable(text: $searchText, prompt: "Search phrases")
         .toolbar {
             if !destinationSavedPhrases.isEmpty {
                 ToolbarItem(placement: .topBarTrailing) {
                     EditButton()
+                        .accessibilityLabel("Edit saved phrases")
+                        .accessibilityHint("Lets you delete saved phrases from the list.")
                 }
             }
         }
