@@ -1,0 +1,181 @@
+{
+  "destination": "Oslo",
+  "languages": ["Norwegian"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "En kaffe, takk.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Simple and common.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Jeg vil gjerne ha et bord for to.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful in restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Menyen, takk.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Useful and natural.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Har dere vegetariske retter?",
+          "englishMeaning": "Do you have vegetarian dishes?",
+          "notes": "Useful for dietary needs.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "Regningen, takk.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common payment phrase.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Hvor er nærmeste t-banestasjon?",
+          "englishMeaning": "Where is the nearest metro station?",
+          "notes": "Useful in Oslo.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "En billett til sentrum, takk.",
+          "englishMeaning": "One ticket to the city center, please.",
+          "notes": "Useful for transit.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Går denne trikken til sentrum?",
+          "englishMeaning": "Does this tram go to the city center?",
+          "notes": "Helpful before boarding.",
+          "tags": ["transport", "tram"]
+        },
+        {
+          "targetText": "Hvor mye koster det til flyplassen?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Kan du slippe meg av her?",
+          "englishMeaning": "Can you drop me off here?",
+          "notes": "Taxi request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Jeg har en reservasjon i navnet Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "At reception.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "Når er utsjekking?",
+          "englishMeaning": "When is check-out?",
+          "notes": "Useful to confirm timing.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Er frokost inkludert?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Kan dere oppbevare bagasjen min?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Useful before check-in or departure.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "Nøkkelkortet virker ikke.",
+          "englishMeaning": "The key card is not working.",
+          "notes": "Useful for room problems.",
+          "tags": ["hotel", "problem"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Jeg trenger hjelp.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and clear.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Ring en lege, takk.",
+          "englishMeaning": "Call a doctor, please.",
+          "notes": "Useful for medical issues.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Jeg har mistet passet mitt.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Hvor er nærmeste apotek?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Kan du snakke saktere?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful if you miss details.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Hei.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Tusen takk.",
+          "englishMeaning": "Thank you very much.",
+          "notes": "Polite and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Unnskyld.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Snakker du engelsk?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful early in conversations.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Jeg forstår ikke.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

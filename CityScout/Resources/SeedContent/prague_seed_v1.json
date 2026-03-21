@@ -1,0 +1,181 @@
+{
+  "destination": "Prague",
+  "languages": ["Czech"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Jednu kávu, prosím.",
+          "englishMeaning": "One coffee, please.",
+          "notes": "Simple and polite.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Chtěl bych stůl pro dva.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful in restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Jídelní lístek, prosím.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Very useful phrase.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Máte něco vegetariánského?",
+          "englishMeaning": "Do you have something vegetarian?",
+          "notes": "Useful for dietary requests.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "Účet, prosím.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common at the end of a meal.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Kde je nejbližší stanice metra?",
+          "englishMeaning": "Where is the nearest metro station?",
+          "notes": "Useful for city transport.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Jeden lístek do centra, prosím.",
+          "englishMeaning": "One ticket to the center, please.",
+          "notes": "Useful when buying transit tickets.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Jede tato tramvaj na Staré Město?",
+          "englishMeaning": "Does this tram go to the Old Town?",
+          "notes": "Helpful before boarding.",
+          "tags": ["transport", "tram"]
+        },
+        {
+          "targetText": "Kolik to stojí na letiště?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Můžete mě vysadit tady?",
+          "englishMeaning": "Can you drop me off here?",
+          "notes": "Taxi drop-off request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Mám rezervaci na jméno Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "Common at reception.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "V kolik hodin je check-out?",
+          "englishMeaning": "What time is check-out?",
+          "notes": "Useful to confirm timing.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Je snídaně v ceně?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Můžete uschovat moje zavazadla?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Useful before check-in or after check-out.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "Pokoj ještě není připraven?",
+          "englishMeaning": "Is the room not ready yet?",
+          "notes": "Useful at arrival time.",
+          "tags": ["hotel", "room"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Potřebuji pomoc.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and direct.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Zavolejte prosím lékaře.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "Useful for medical issues.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Ztratil jsem pas.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Kde je nejbližší lékárna?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Můžete mluvit pomaleji?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful in stressful moments.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Dobrý den.",
+          "englishMeaning": "Good day.",
+          "notes": "Polite greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Děkuji.",
+          "englishMeaning": "Thank you.",
+          "notes": "Very common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Promiňte.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Mluvíte anglicky?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful at the start of a conversation.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Nerozumím.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

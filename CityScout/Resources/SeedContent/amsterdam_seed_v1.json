@@ -1,0 +1,181 @@
+{
+  "destination": "Amsterdam",
+  "languages": ["Dutch"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Een koffie, alstublieft.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Polite and common.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Ik wil graag een tafel voor twee.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful at restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Mag ik de menukaart?",
+          "englishMeaning": "May I have the menu?",
+          "notes": "Natural and polite.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Hebt u vegetarische opties?",
+          "englishMeaning": "Do you have vegetarian options?",
+          "notes": "Good for dietary needs.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "De rekening, alstublieft.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common when paying.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Waar is het dichtstbijzijnde tramstation?",
+          "englishMeaning": "Where is the nearest tram stop?",
+          "notes": "Very useful in Amsterdam.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Een kaartje naar het centrum, alstublieft.",
+          "englishMeaning": "One ticket to the city center, please.",
+          "notes": "Useful for transit.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Gaat deze tram naar Centraal Station?",
+          "englishMeaning": "Does this tram go to Central Station?",
+          "notes": "Helpful before boarding.",
+          "tags": ["transport", "tram"]
+        },
+        {
+          "targetText": "Hoeveel kost het naar de luchthaven?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful for taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Kunt u mij hier afzetten?",
+          "englishMeaning": "Can you drop me off here?",
+          "notes": "Taxi request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Ik heb een reservering op naam van Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "At reception desk.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "Hoe laat is het uitchecken?",
+          "englishMeaning": "What time is check-out?",
+          "notes": "Important to confirm.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Is het ontbijt inbegrepen?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Kunt u mijn bagage bewaren?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Useful before check-in or after check-out.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "De sleutelkaart werkt niet.",
+          "englishMeaning": "The key card is not working.",
+          "notes": "Helpful for room access problems.",
+          "tags": ["hotel", "problem"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Ik heb hulp nodig.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and direct.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Bel alstublieft een dokter.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "Medical emergency phrase.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Ik ben mijn paspoort kwijt.",
+          "englishMeaning": "I have lost my passport.",
+          "notes": "Useful at the police station.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Waar is de dichtstbijzijnde apotheek?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Kunt u langzamer spreken?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful in urgent situations too.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Hallo.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Dank u wel.",
+          "englishMeaning": "Thank you.",
+          "notes": "Polite and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Pardon.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Spreekt u Engels?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Helpful at the start of a conversation.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Ik begrijp het niet.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

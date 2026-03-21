@@ -1,0 +1,181 @@
+{
+  "destination": "Dublin",
+  "languages": ["English"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "A coffee, please.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Simple and polite.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "I would like a table for two.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful at restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Could I see the menu, please?",
+          "englishMeaning": "Could I see the menu, please?",
+          "notes": "Polite and natural.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Do you have vegetarian options?",
+          "englishMeaning": "Do you have vegetarian options?",
+          "notes": "Useful for dietary needs.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "The bill, please.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common payment phrase.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Where is the nearest bus stop?",
+          "englishMeaning": "Where is the nearest bus stop?",
+          "notes": "Useful in Dublin.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "One ticket to the city centre, please.",
+          "englishMeaning": "One ticket to the city centre, please.",
+          "notes": "Useful for transit.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Does this bus go to Temple Bar?",
+          "englishMeaning": "Does this bus go to Temple Bar?",
+          "notes": "Useful before boarding.",
+          "tags": ["transport", "bus"]
+        },
+        {
+          "targetText": "How much is it to the airport?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Could you drop me off here, please?",
+          "englishMeaning": "Could you drop me off here, please?",
+          "notes": "Taxi request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "I have a reservation under the name Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "At reception.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "What time is check-out?",
+          "englishMeaning": "What time is check-out?",
+          "notes": "Useful to confirm timing.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Is breakfast included?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Could you store my luggage?",
+          "englishMeaning": "Could you store my luggage?",
+          "notes": "Useful before check-in or departure.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "The room is not ready yet.",
+          "englishMeaning": "The room is not ready yet.",
+          "notes": "Useful at arrival time.",
+          "tags": ["hotel", "room"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "I need help.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and clear.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Please call a doctor.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "Useful for medical issues.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "I lost my passport.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Where is the nearest pharmacy?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Could you speak more slowly?",
+          "englishMeaning": "Could you speak more slowly?",
+          "notes": "Useful if you miss details.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Hello.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Thank you very much.",
+          "englishMeaning": "Thank you very much.",
+          "notes": "Polite and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Excuse me.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Do you speak English?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful if someone switches language with another visitor nearby.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "I do not understand.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

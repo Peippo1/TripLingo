@@ -1,0 +1,181 @@
+{
+  "destination": "Vienna",
+  "languages": ["German"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Einen Kaffee, bitte.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Very useful in Vienna.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Ich hätte gern einen Tisch für zwei.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Restaurant seating request.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Die Speisekarte, bitte.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Short and natural.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Haben Sie etwas ohne Fleisch?",
+          "englishMeaning": "Do you have something without meat?",
+          "notes": "Useful for dietary needs.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "Zahlen, bitte.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common payment phrase.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Wo ist die nächste U-Bahn-Station?",
+          "englishMeaning": "Where is the nearest subway station?",
+          "notes": "Useful for Vienna transport.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Eine Fahrkarte, bitte.",
+          "englishMeaning": "One ticket, please.",
+          "notes": "Basic transit purchase.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Fährt diese Straßenbahn ins Zentrum?",
+          "englishMeaning": "Does this tram go to the center?",
+          "notes": "Useful before boarding.",
+          "tags": ["transport", "tram"]
+        },
+        {
+          "targetText": "Wie komme ich zum Stephansdom?",
+          "englishMeaning": "How do I get to St. Stephen's Cathedral?",
+          "notes": "Useful for directions.",
+          "tags": ["walking", "directions"]
+        },
+        {
+          "targetText": "Können Sie mich hier aussteigen lassen?",
+          "englishMeaning": "Can you let me out here?",
+          "notes": "Useful in a taxi.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Ich habe eine Reservierung auf den Namen Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "Standard check-in phrase.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "Wann ist der Check-out?",
+          "englishMeaning": "When is check-out?",
+          "notes": "Useful to confirm timing.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Ist das Frühstück inbegriffen?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Können Sie mein Gepäck aufbewahren?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Helpful before check-in or departure.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "Die Klimaanlage funktioniert nicht.",
+          "englishMeaning": "The air conditioning is not working.",
+          "notes": "Useful for room problems.",
+          "tags": ["hotel", "problem"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Ich brauche Hilfe.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and direct.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Rufen Sie bitte einen Arzt.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "Medical issue phrase.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Ich habe meinen Geldbeutel verloren.",
+          "englishMeaning": "I lost my wallet.",
+          "notes": "Useful at the police station.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Wo ist die nächste Apotheke?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Helpful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Können Sie das bitte aufschreiben?",
+          "englishMeaning": "Can you write that down, please?",
+          "notes": "Useful if you miss details.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Guten Tag.",
+          "englishMeaning": "Good day.",
+          "notes": "Polite greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Danke.",
+          "englishMeaning": "Thank you.",
+          "notes": "Simple and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Entschuldigung.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful for attention or apology.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Sprechen Sie Englisch?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful at the start of a conversation.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Ich verstehe nicht.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}
