@@ -1,4 +1,6 @@
+import SwiftData
 import SwiftUI
+import UIKit
 
 private enum PlanPreference: String, CaseIterable, Identifiable {
     case relaxed
@@ -51,6 +53,8 @@ private struct PlanSection: Identifiable {
 struct PlanHomeView: View {
     let destinationName: String
 
+    @Environment(\.modelContext) private var modelContext
+
     private let preferenceColumns = [
         GridItem(.adaptive(minimum: 140), spacing: 10, alignment: .leading)
     ]
@@ -60,6 +64,7 @@ struct PlanHomeView: View {
     @State private var itinerary: PlanAPIService.ItineraryResponse?
     @State private var isLoading = false
     @State private var errorMessage: String?
+    @State private var savedActivityNames: Set<String> = []
 
     private let planAPIService = PlanAPIService()
 
@@ -103,6 +108,9 @@ struct PlanHomeView: View {
             .padding(.bottom)
         }
         .navigationTitle("\(destinationName) Plan")
+        .task {
+            await loadSavedActivities()
+        }
     }
 
     private var introCard: some View {
@@ -247,6 +255,10 @@ struct PlanHomeView: View {
                                 Text(activity)
                                     .font(.body)
                                     .fixedSize(horizontal: false, vertical: true)
+
+                                Spacer(minLength: 12)
+
+                                saveActivityButton(for: activity)
                             }
                         }
                     }
@@ -256,8 +268,7 @@ struct PlanHomeView: View {
                         RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .fill(Color(.secondarySystemBackground))
                     )
-                    .accessibilityElement(children: .combine)
-                    .accessibilityLabel("\(section.title). \(section.activities.joined(separator: ". "))")
+                    .accessibilityElement(children: .contain)
                 }
             }
             .padding(.horizontal)
@@ -300,6 +311,94 @@ struct PlanHomeView: View {
             .accessibilityLabel("Planner error. \(message)")
     }
 
+    private func saveActivityButton(for activity: String) -> some View {
+        let isSaved = savedActivityNames.contains(normalizedActivityName(activity))
+
+        return Button {
+            saveActivity(activity)
+        } label: {
+            Label(isSaved ? "Saved" : "Save", systemImage: isSaved ? "bookmark.fill" : "bookmark")
+                .font(.caption.weight(.semibold))
+                .labelStyle(.titleAndIcon)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .background(
+                    Capsule(style: .continuous)
+                        .fill(isSaved ? Color.accentColor.opacity(0.18) : Color(.tertiarySystemBackground))
+                )
+                .foregroundStyle(isSaved ? Color.accentColor : Color.primary)
+                .opacity(isSaved ? 0.85 : 1)
+                .animation(.easeInOut(duration: 0.2), value: isSaved)
+        }
+        .buttonStyle(.plain)
+        .disabled(isSaved)
+        .accessibilityLabel(isSaved ? "Activity saved" : "Save activity")
+        .accessibilityHint(isSaved ? "This activity is already in your saved places." : "Adds this activity to your saved places")
+        .accessibilityValue(isSaved ? "Saved" : "Not saved")
+    }
+
+    @MainActor
+    private func loadSavedActivities() async {
+        let destination = destinationName
+
+        do {
+            let descriptor = FetchDescriptor<SavedPlace>(
+                predicate: #Predicate<SavedPlace> { place in
+                    place.destinationName == destination
+                }
+            )
+            let savedPlaces = try modelContext.fetch(descriptor)
+            savedActivityNames = Set(savedPlaces.map(\.name).map(normalizedActivityName))
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func saveActivity(_ activity: String) {
+        let trimmedActivity = normalizedActivityName(activity)
+
+        guard savedActivityNames.contains(trimmedActivity) == false else {
+            return
+        }
+
+        do {
+            let destination = destinationName
+            let descriptor = FetchDescriptor<SavedPlace>(
+                predicate: #Predicate<SavedPlace> { place in
+                    place.name == trimmedActivity && place.destinationName == destination
+                }
+            )
+
+            let existingPlace = try modelContext.fetch(descriptor).first
+            guard existingPlace == nil else {
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    savedActivityNames.insert(trimmedActivity)
+                }
+                return
+            }
+
+            try SavedPlaceService.savePlace(
+                name: trimmedActivity,
+                destinationName: destinationName,
+                latitude: 0,
+                longitude: 0,
+                in: modelContext
+            )
+
+            withAnimation(.easeInOut(duration: 0.2)) {
+                savedActivityNames.insert(trimmedActivity)
+            }
+
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func normalizedActivityName(_ activity: String) -> String {
+        activity.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
     @MainActor
     private func generateItinerary() async {
         isLoading = true
@@ -314,6 +413,7 @@ struct PlanHomeView: View {
                     .map(\.title),
                 savedPlaces: []
             )
+            await loadSavedActivities()
         } catch {
             errorMessage = error.localizedDescription
         }

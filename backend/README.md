@@ -15,7 +15,7 @@ source .venv/bin/activate
 ## Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+./.venv/bin/python -m pip install -r requirements.txt
 ```
 
 ## Configure Environment Variables
@@ -29,10 +29,14 @@ Update `.env` when you are ready to add a real OpenAI integration.
 ## Run Locally
 
 ```bash
-uvicorn app.main:app --reload
+./run_dev.sh
 ```
 
 The API will start on `http://127.0.0.1:8000`.
+If `8000` is already taken, the script will automatically use the next free port.
+
+This uses the backend virtual environment directly, which avoids accidentally
+starting `uvicorn` from a different global Python installation.
 
 ## Example Requests
 
