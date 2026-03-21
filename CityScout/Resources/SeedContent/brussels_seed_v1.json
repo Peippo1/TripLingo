@@ -1,0 +1,181 @@
+{
+  "destination": "Brussels",
+  "languages": ["French"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Un café, s'il vous plaît.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Polite and simple.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Je voudrais une table pour deux.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful at restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "La carte, s'il vous plaît.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Short and natural.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Avez-vous des plats végétariens ?",
+          "englishMeaning": "Do you have vegetarian dishes?",
+          "notes": "Useful for food preferences.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "L'addition, s'il vous plaît.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common when paying.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Où est la station de métro la plus proche ?",
+          "englishMeaning": "Where is the nearest metro station?",
+          "notes": "Useful in central Brussels.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Un ticket pour le centre, s'il vous plaît.",
+          "englishMeaning": "One ticket to the center, please.",
+          "notes": "Helpful for transit.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Ce train va-t-il à la gare centrale ?",
+          "englishMeaning": "Does this train go to Central Station?",
+          "notes": "Useful on platforms.",
+          "tags": ["transport", "train"]
+        },
+        {
+          "targetText": "Combien coûte la course jusqu'à l'aéroport ?",
+          "englishMeaning": "How much is the ride to the airport?",
+          "notes": "Good for taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Pouvez-vous me déposer ici, s'il vous plaît ?",
+          "englishMeaning": "Can you drop me off here, please?",
+          "notes": "Taxi drop-off request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "J'ai une réservation au nom de Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "Replace the name as needed.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "À quelle heure est le départ ?",
+          "englishMeaning": "What time is check-out?",
+          "notes": "Useful to confirm timings.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Le petit-déjeuner est-il compris ?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common at hotels.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Pouvez-vous garder mes bagages ?",
+          "englishMeaning": "Can you keep my luggage?",
+          "notes": "Useful before or after your stay.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "La chambre est-elle prête ?",
+          "englishMeaning": "Is the room ready?",
+          "notes": "Useful at check-in time.",
+          "tags": ["hotel", "room"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "J'ai besoin d'aide.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and clear.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Appelez un médecin, s'il vous plaît.",
+          "englishMeaning": "Call a doctor, please.",
+          "notes": "Medical emergency phrase.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "J'ai perdu mon passeport.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Où est la pharmacie la plus proche ?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for minor issues.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Pouvez-vous parler plus lentement ?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful when you need clarity.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Bonjour.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Merci beaucoup.",
+          "englishMeaning": "Thank you very much.",
+          "notes": "Very common and polite.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Excusez-moi.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Parlez-vous anglais ?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful early in conversations.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Je ne comprends pas.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

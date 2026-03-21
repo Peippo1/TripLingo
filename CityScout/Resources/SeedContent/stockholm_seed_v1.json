@@ -1,0 +1,181 @@
+{
+  "destination": "Stockholm",
+  "languages": ["Swedish"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "En kaffe, tack.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Simple and common.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Jag skulle vilja ha ett bord för två.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful in restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Menyn, tack.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Short and useful.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Har ni vegetariska alternativ?",
+          "englishMeaning": "Do you have vegetarian options?",
+          "notes": "Useful for dietary requests.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "Notan, tack.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common payment phrase.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Var är närmaste tunnelbanestation?",
+          "englishMeaning": "Where is the nearest metro station?",
+          "notes": "Useful in Stockholm.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "En biljett till centrum, tack.",
+          "englishMeaning": "One ticket to the center, please.",
+          "notes": "Useful for transit.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Går den här bussen till Gamla stan?",
+          "englishMeaning": "Does this bus go to the Old Town?",
+          "notes": "Helpful before boarding.",
+          "tags": ["transport", "bus"]
+        },
+        {
+          "targetText": "Hur mycket kostar det till flygplatsen?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Kan du släppa av mig här?",
+          "englishMeaning": "Can you drop me off here?",
+          "notes": "Taxi request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Jag har en bokning i namnet Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "At reception desk.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "När är utcheckningen?",
+          "englishMeaning": "When is check-out?",
+          "notes": "Useful to confirm times.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Ingår frukost?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Kan ni förvara mitt bagage?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Useful before check-in or departure.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "Rummet är inte klart än.",
+          "englishMeaning": "The room is not ready yet.",
+          "notes": "Useful at arrival time.",
+          "tags": ["hotel", "room"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Jag behöver hjälp.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and clear.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Ring en läkare, tack.",
+          "englishMeaning": "Call a doctor, please.",
+          "notes": "Useful for medical issues.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Jag har tappat mitt pass.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Var är närmaste apotek?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Kan du prata långsammare?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful for understanding.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Hej.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Tack så mycket.",
+          "englishMeaning": "Thank you very much.",
+          "notes": "Polite and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Ursäkta.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Pratar du engelska?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Useful in many situations.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Jag förstår inte.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

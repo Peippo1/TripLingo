@@ -1,0 +1,181 @@
+{
+  "destination": "Budapest",
+  "languages": ["Hungarian"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Egy kávét kérek.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Simple and polite.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Szeretnék egy asztalt kettőre.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful at restaurants.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Az étlapot, kérem.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Short and useful.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Van vegetáriánus ételük?",
+          "englishMeaning": "Do you have vegetarian food?",
+          "notes": "Useful for dietary preferences.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "A számlát, kérem.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common when paying.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Hol van a legközelebbi metróállomás?",
+          "englishMeaning": "Where is the nearest metro station?",
+          "notes": "Useful in Budapest.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Egy jegyet a belvárosba, kérem.",
+          "englishMeaning": "One ticket to downtown, please.",
+          "notes": "Helpful for public transport.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Ez a villamos a központba megy?",
+          "englishMeaning": "Does this tram go to the center?",
+          "notes": "Useful before boarding.",
+          "tags": ["transport", "tram"]
+        },
+        {
+          "targetText": "Mennyibe kerül a repülőtérig?",
+          "englishMeaning": "How much is it to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Le tud tenni itt?",
+          "englishMeaning": "Can you drop me off here?",
+          "notes": "Taxi request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Foglalásom van Finch néven.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "At reception.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "Mikor van a kijelentkezés?",
+          "englishMeaning": "When is check-out?",
+          "notes": "Useful to confirm timing.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "A reggeli benne van az árban?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Meg tudják őrizni a csomagomat?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Useful before check-in or departure.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "A szoba még nincs kész?",
+          "englishMeaning": "Is the room not ready yet?",
+          "notes": "Useful at arrival time.",
+          "tags": ["hotel", "room"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Segítségre van szükségem.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and direct.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Hívjon orvost, kérem.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "Medical emergency phrase.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Elvesztettem az útlevelemet.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Hol van a legközelebbi gyógyszertár?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for medicine.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Tud lassabban beszélni?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful if you miss details.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Jó napot.",
+          "englishMeaning": "Good day.",
+          "notes": "Polite greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Köszönöm.",
+          "englishMeaning": "Thank you.",
+          "notes": "Basic and polite.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Elnézést.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Beszél angolul?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Helpful in many situations.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Nem értem.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful for clarification.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}

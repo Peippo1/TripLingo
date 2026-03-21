@@ -16,7 +16,17 @@ enum SeedBootstrapper {
             ("rome_seed_v1", "didImportSeed_rome_seed_v1"),
             ("helsinki_seed_v1", "didImportSeed_helsinki_seed_v1"),
             ("copenhagen_seed_v1", "didImportSeed_copenhagen_seed_v1"),
-            ("lisbon_seed_v1", "didImportSeed_lisbon_seed_v1")
+            ("lisbon_seed_v1", "didImportSeed_lisbon_seed_v1"),
+            ("berlin_seed_v1", "didImportSeed_berlin_seed_v1"),
+            ("amsterdam_seed_v1", "didImportSeed_amsterdam_seed_v1"),
+            ("brussels_seed_v1", "didImportSeed_brussels_seed_v1"),
+            ("vienna_seed_v1", "didImportSeed_vienna_seed_v1"),
+            ("prague_seed_v1", "didImportSeed_prague_seed_v1"),
+            ("budapest_seed_v1", "didImportSeed_budapest_seed_v1"),
+            ("warsaw_seed_v1", "didImportSeed_warsaw_seed_v1"),
+            ("stockholm_seed_v1", "didImportSeed_stockholm_seed_v1"),
+            ("oslo_seed_v1", "didImportSeed_oslo_seed_v1"),
+            ("dublin_seed_v1", "didImportSeed_dublin_seed_v1")
         ]
 
         let tripCount = try modelContext.fetchCount(FetchDescriptor<Trip>())

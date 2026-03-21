@@ -1,0 +1,181 @@
+{
+  "destination": "Berlin",
+  "languages": ["German"],
+  "situations": [
+    {
+      "title": "Café / Restaurant",
+      "phrases": [
+        {
+          "targetText": "Einen Kaffee, bitte.",
+          "englishMeaning": "A coffee, please.",
+          "notes": "Simple and polite in cafes.",
+          "tags": ["cafe", "polite"]
+        },
+        {
+          "targetText": "Ich hätte gern einen Tisch für zwei.",
+          "englishMeaning": "I would like a table for two.",
+          "notes": "Useful when arriving at a restaurant.",
+          "tags": ["restaurant", "seating"]
+        },
+        {
+          "targetText": "Die Speisekarte, bitte.",
+          "englishMeaning": "The menu, please.",
+          "notes": "Direct and natural.",
+          "tags": ["restaurant", "menu"]
+        },
+        {
+          "targetText": "Haben Sie etwas Vegetarisches?",
+          "englishMeaning": "Do you have anything vegetarian?",
+          "notes": "Good for dietary questions.",
+          "tags": ["food", "dietary"]
+        },
+        {
+          "targetText": "Die Rechnung, bitte.",
+          "englishMeaning": "The bill, please.",
+          "notes": "Common when you are ready to pay.",
+          "tags": ["restaurant", "payment"]
+        }
+      ]
+    },
+    {
+      "title": "Getting Around",
+      "phrases": [
+        {
+          "targetText": "Wo ist die nächste U-Bahn-Station?",
+          "englishMeaning": "Where is the nearest subway station?",
+          "notes": "Useful across Berlin.",
+          "tags": ["transport", "directions"]
+        },
+        {
+          "targetText": "Eine Fahrkarte ins Zentrum, bitte.",
+          "englishMeaning": "One ticket to the city center, please.",
+          "notes": "Handy at ticket machines or counters.",
+          "tags": ["transport", "ticket"]
+        },
+        {
+          "targetText": "Fährt dieser Zug zum Hauptbahnhof?",
+          "englishMeaning": "Does this train go to the central station?",
+          "notes": "Helpful on platforms.",
+          "tags": ["transport", "train"]
+        },
+        {
+          "targetText": "Wie viel kostet es bis zum Flughafen?",
+          "englishMeaning": "How much does it cost to the airport?",
+          "notes": "Useful in taxis.",
+          "tags": ["taxi", "price"]
+        },
+        {
+          "targetText": "Können Sie mich hier aussteigen lassen?",
+          "englishMeaning": "Can you let me out here?",
+          "notes": "Taxi drop-off request.",
+          "tags": ["taxi", "direction"]
+        }
+      ]
+    },
+    {
+      "title": "Hotel / Check-in",
+      "phrases": [
+        {
+          "targetText": "Ich habe eine Reservierung auf den Namen Finch.",
+          "englishMeaning": "I have a reservation under the name Finch.",
+          "notes": "Replace the name as needed.",
+          "tags": ["hotel", "checkin"]
+        },
+        {
+          "targetText": "Wann ist der Check-out?",
+          "englishMeaning": "When is check-out?",
+          "notes": "Useful at reception.",
+          "tags": ["hotel", "checkout"]
+        },
+        {
+          "targetText": "Ist das Frühstück im Preis inbegriffen?",
+          "englishMeaning": "Is breakfast included?",
+          "notes": "Common hotel question.",
+          "tags": ["hotel", "breakfast"]
+        },
+        {
+          "targetText": "Können Sie mein Gepäck aufbewahren?",
+          "englishMeaning": "Can you store my luggage?",
+          "notes": "Helpful before or after check-in.",
+          "tags": ["hotel", "luggage"]
+        },
+        {
+          "targetText": "Das WLAN funktioniert nicht.",
+          "englishMeaning": "The Wi-Fi is not working.",
+          "notes": "Useful for room issues.",
+          "tags": ["hotel", "problem"]
+        }
+      ]
+    },
+    {
+      "title": "Emergencies",
+      "phrases": [
+        {
+          "targetText": "Ich brauche Hilfe.",
+          "englishMeaning": "I need help.",
+          "notes": "Short and clear.",
+          "tags": ["emergency"]
+        },
+        {
+          "targetText": "Rufen Sie bitte einen Arzt.",
+          "englishMeaning": "Please call a doctor.",
+          "notes": "For medical issues.",
+          "tags": ["emergency", "medical"]
+        },
+        {
+          "targetText": "Ich habe meinen Reisepass verloren.",
+          "englishMeaning": "I lost my passport.",
+          "notes": "Important for police or embassy.",
+          "tags": ["emergency", "documents"]
+        },
+        {
+          "targetText": "Wo ist die nächste Apotheke?",
+          "englishMeaning": "Where is the nearest pharmacy?",
+          "notes": "Useful for minor issues.",
+          "tags": ["emergency", "pharmacy"]
+        },
+        {
+          "targetText": "Können Sie langsamer sprechen?",
+          "englishMeaning": "Can you speak more slowly?",
+          "notes": "Useful in stressful situations.",
+          "tags": ["help", "communication"]
+        }
+      ]
+    },
+    {
+      "title": "Politeness / Basics",
+      "phrases": [
+        {
+          "targetText": "Hallo.",
+          "englishMeaning": "Hello.",
+          "notes": "Basic greeting.",
+          "tags": ["greeting"]
+        },
+        {
+          "targetText": "Danke schön.",
+          "englishMeaning": "Thank you very much.",
+          "notes": "Polite and common.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Entschuldigung.",
+          "englishMeaning": "Excuse me.",
+          "notes": "Useful to get attention or apologize.",
+          "tags": ["polite"]
+        },
+        {
+          "targetText": "Sprechen Sie Englisch?",
+          "englishMeaning": "Do you speak English?",
+          "notes": "Helpful early in a conversation.",
+          "tags": ["language", "help"]
+        },
+        {
+          "targetText": "Ich verstehe nicht.",
+          "englishMeaning": "I do not understand.",
+          "notes": "Useful when things move too quickly.",
+          "tags": ["language", "help"]
+        }
+      ]
+    }
+  ]
+}
